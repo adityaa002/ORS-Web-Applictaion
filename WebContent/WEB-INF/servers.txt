@@ -1,0 +1,4 @@
+9 wildfly ---- welcome-----html file
+tomcat ------ webapps-----html file
+iginx-----html folder--paste file, then go to conf--open nginx.conf---chnge localhost 4200, add your html file after location>htm
+then conf nd cmd run 

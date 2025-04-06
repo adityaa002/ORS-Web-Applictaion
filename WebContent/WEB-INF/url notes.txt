@@ -1,0 +1,9 @@
+URL  :  http://localhost:8080/index.html
+URL :- Uniform resource loactor
+http :- protocol
+localhost:8080 :- socket
+index.html :- URI (Uniform resource identifier)
+
+protocol + socket + URI = URL
+
+ 
