@@ -1,0 +1,26 @@
+virtual container
+image can run and then it become container
+anyfolder----dockerfile , docker-compose.yml
+
+
+
+docker file::
+FROM tomcat?9.0
+COPY rays.html usr/local/tomcat/webaps/ROOT
+
+vsCode: ctrl+~ to open terminal and check it's running on cmd or powerShell
+
+
+docker-compose.yml file
+version: '3.0'   
+services:
+tomcat:
+ build: .
+ container_name : tomcat-container
+ ports:
+  -"8080:8080"
+
+Commands :-
+docker-compose build (in cmd)
+docker-compose up -d (create container) (-d is must)
+docker-compose down
