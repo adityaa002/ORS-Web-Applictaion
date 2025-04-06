@@ -14,7 +14,9 @@ public class WelcomeCtl extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.sendRedirect("Welcome.jsp");
+//		resp.sendRedirect("Welcome.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("Welcome.jsp");
+		rd.forward(req, resp);
 	}
 
 	@Override
