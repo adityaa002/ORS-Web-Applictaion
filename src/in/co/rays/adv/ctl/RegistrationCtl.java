@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import in.co.rays.adv.bean.UserBean;
 import in.co.rays.adv.model.UserModel;
 
-@WebServlet("/RegistrationViewCtl")
-public class RegistrationViewCtl extends HttpServlet {
+@WebServlet("/RegistrationCtl")
+public class RegistrationCtl extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

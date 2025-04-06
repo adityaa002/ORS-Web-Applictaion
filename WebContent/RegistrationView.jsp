@@ -12,7 +12,7 @@
 
 	<div align="center">
 		<h1>User Registration</h1>
-		<form action = "RegistrationViewCtl" method = "post">
+		<form action = "RegistrationCtl" method = "post">
 			<table >
 
 				<tr>

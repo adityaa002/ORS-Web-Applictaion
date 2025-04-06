@@ -12,15 +12,14 @@
 	<%
 		UserBean user = (UserBean) request.getAttribute("user");
 	%>
-	<%
-		if (user != null) {
-	%>
+	<% if (user != null) {%>
 	<h3>
 		Hi,
-		<%=user.getFirstName()%></h3>    
+		 Mr. <%=user.getFirstName()%></h3>   
+		 
 	<a href="#"><b>Add User</b></a> |
-	
-	<a href="#"><b>User List</b></a>
+	<a href="#"><b>User List</b></a> |
+	<a href = "LoginCtl"><b>LogOut</b></a>
 	<%
 		} else {
 	%>
