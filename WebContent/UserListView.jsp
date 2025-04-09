@@ -11,10 +11,14 @@
 <body>
 
 
-	
+
 	<%
-		List list = (List) request.getAttribute("list");
+	List nextList = (List) request.getAttribute("nextList");
+	int pageNo = (int) request.getAttribute("pageNo");
+	
+	List list = (List) request.getAttribute("list");
 		Iterator it = list.iterator();
+	
 	%>
 
 
@@ -60,11 +64,26 @@
 				<%
 					}
 				%>
-
-
-
 			</table>
-		</form>
+			<br>
+			<table style="width: 100%">
+				<tr>
+					<td style="width: 30%"><input type="submit" name="operation"
+						value="previous" <%=(pageNo == 1) ? "disabled" : ""%>></td>
+
+					<td style="width: 30%"><input type="submit" name="operation"
+						value="add"></td>
+
+					<td style="width: 30%"><input type="submit" name="operation"
+						value="delete"></td>
+
+					<td style="text-align: right;"><input type="submit"
+						name="operation" value="next"  <%=(nextList.size() == 0) ? "disabled" : ""%>></td>
+
+				</tr>
+			</table>
+			<input type="box" name="pageNo" value="<%=pageNo%>">
+			</form>
 	</div>
 
 </body>

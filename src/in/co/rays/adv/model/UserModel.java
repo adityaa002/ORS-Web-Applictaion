@@ -135,7 +135,8 @@ public class UserModel {
 		StringBuffer sql = new StringBuffer("select * from user where 1=1 ");
 
 		if (pageSize > 0) {
-			pageNo = (pageSize - 1) * pageNo;
+			pageNo = (pageNo - 1) * pageSize;
+			
 			sql.append(" limit " + pageNo + "," + pageSize);
 
 		}
