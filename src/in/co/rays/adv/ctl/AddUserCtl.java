@@ -18,6 +18,20 @@ public class AddUserCtl extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String id = req.getParameter("id");
+		if (id != null) {
+			UserModel model = new UserModel();
+
+			try {
+				UserBean bean = model.findByPk(Integer.parseInt(id));
+				req.setAttribute("bean", bean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+
 		resp.sendRedirect("AddUserView.jsp");
 	}
 
