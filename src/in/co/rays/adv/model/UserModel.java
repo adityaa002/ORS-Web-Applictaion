@@ -89,14 +89,14 @@ public class UserModel {
 
 	}
 
-	public static void findPk(int id) throws Exception {
+	public static  UserBean  findByPk(int id) throws Exception {
 		Connection conn = JDBCDataSource.getConnection();
 
 		PreparedStatement pstmt = conn.prepareStatement("select * from user where id = ?  ");
 		pstmt.setInt(1, id);
 
 		ResultSet rs = pstmt.executeQuery();
-
+UserBean bean = null;
 		while (rs.next()) {
 			System.out.print(rs.getInt(1));
 			System.out.print("\t" + rs.getString(2));
@@ -107,6 +107,7 @@ public class UserModel {
 			System.out.println("\t" + rs.getString(7));
 		}
 		JDBCDataSource.closeConnection(conn);
+		return bean; 
 
 	}
 
@@ -136,7 +137,7 @@ public class UserModel {
 
 		if (pageSize > 0) {
 			pageNo = (pageNo - 1) * pageSize;
-			
+
 			sql.append(" limit " + pageNo + "," + pageSize);
 
 		}
@@ -148,7 +149,8 @@ public class UserModel {
 		List list = new ArrayList();
 		while (rs.next()) {
 			bean = new UserBean();
-			bean.setLoginId(rs.getString(1));
+
+			bean.setId(rs.getInt(1));
 			bean.setFirstName(rs.getString(2));
 			bean.setLastName(rs.getString(3));
 			bean.setLoginId(rs.getString(4));
@@ -169,7 +171,7 @@ public class UserModel {
 		PreparedStatement pstmt = conn.prepareStatement("select * from user where login_id = ? and password = ?");
 
 		pstmt.setString(1, loginId);
-		pstmt.setString(2, password);  
+		pstmt.setString(2, password);
 		ResultSet rs = pstmt.executeQuery();
 
 		UserBean bean = null;

@@ -72,6 +72,20 @@ public class UserListCtl extends HttpServlet {
 
 		}
 		if (op.equals("delete")) {
+			pageNo = 1;
+
+			bean = new UserBean();
+			String[] ids = req.getParameterValues("ids");
+
+			if (ids != null && ids.length > 0) {
+				for (String id : ids) {
+					try {
+						model.delete(Integer.parseInt(id));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
 
 		}
 

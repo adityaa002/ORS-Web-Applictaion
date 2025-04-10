@@ -17,7 +17,8 @@
 	%>
 	<h3>
 		Hi, Mr.
-		<%=user.getFirstName()%></h3>
+		<%=user.getFirstName()%>
+		<%=user.getId() %></h3>
 
 	<a href="AddUserCtl"><b>Add User</b></a>
 	<th>|</th>

@@ -47,7 +47,7 @@
 						UserBean bean = (UserBean) it.next();
 				%>
 				<tr align="center">
-					<td><input type="checkbox"></td>
+					<td><input type="checkbox" name="ids" value ="<%=bean.getId()%>"></td>
 					<td><%=bean.getId()%></td>
 					<td><%=bean.getFirstName()%></td>
 					<td><%=bean.getLastName()%></td>
@@ -56,7 +56,7 @@
 					<td><%=bean.getDob()%></td>
 					<td><%=bean.getAddress()%></td>
 
-					<td><a href="AddUserCtl">Edit</a></td>
+					<td><a href="AddUserCtl?id=<%=bean.getId()%>">Edit</a></td>
 					<td></td>
 
 
